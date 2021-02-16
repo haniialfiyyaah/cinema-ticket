@@ -19,3 +19,19 @@
 11. Print Tickets
 12. Save the Transaction Report in .pdf Format
 13. Search (Movies, Showtimes, Employees, Reports)
+
+- - - -
+
+## Team
+
+### Students
+- Hani Alfiyyah Nurulhuda (Developer)
+- El Dashen (Document)
+
+### Lecture
+- Galih Hermawan, S.Kom., M.T.,
+
+Build for SBD-13/S1/V
+
+### Credit
+- Indonesia Computer University
