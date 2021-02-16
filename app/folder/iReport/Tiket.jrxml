@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="283" pageHeight="340" columnWidth="243" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4d1df27a-756e-49fd-aee3-98ee5dc3fbba">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="15"/>
+	<queryString>
+		<![CDATA[SELECT
+     relasi_pesantiket.`ID_Tiket` AS ID_Tiket,
+     relasi_pesantiket.`ID_Struk` AS ID_Struk,
+     relasi_pesantiket.`ID_Jadwal` AS ID_Jadwal,
+     relasi_pesantiket.`ID_Karyawan` AS ID_Karyawan,
+     relasi_pesantiket.`Judul_Film` AS Judul_Film,
+     relasi_pesantiket.`Tanggal` AS Tanggal,
+     relasi_pesantiket.`Jam` AS Jam,
+     relasi_pesantiket.`Harga` AS Harga,
+     relasi_pesantiket.`Studio` AS Studio,
+     `Kursi` AS Kursi,
+     `strukpembayaran`.`Tanggal_Beli` AS Tanggal_Beli,
+     `strukpembayaran`.`Jam_Beli` AS Jam_Beli
+FROM
+     `relasi_pesantiket` relasi_pesantiket JOIN 
+     `relasi_pesantiket.kursi` relasi_pesantiket_kursi USING (`ID_Tiket`) JOIN
+     `strukpembayaran` strukpembayaran USING (`ID_Struk`)]]>
+	</queryString>
+	<field name="ID_Tiket" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ID_Struk" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ID_Jadwal" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ID_Karyawan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Judul_Film" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Tanggal" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Jam" class="java.sql.Time">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Harga" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Studio" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Kursi" class="java.lang.String"/>
+	<field name="Tanggal_Beli" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Jam_Beli" class="java.sql.Time">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="243" splitType="Stretch">
+			<textField>
+				<reportElement mode="Transparent" x="0" y="65" width="158" height="21" uuid="18e1bf48-7a3a-4c58-9ee8-4785591b9df2"/>
+				<textElement>
+					<font fontName="Courier New" size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Judul_Film}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="87" width="40" height="20" uuid="755849ca-0594-48a4-92a2-dd213e7ca228"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="7"/>
+				</textElement>
+				<text><![CDATA[SHOWTIME]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="40" y="87" width="53" height="20" uuid="cf67ccf4-64b4-42fb-9d40-f87123e2f46f"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Jam}.toString().substring(0,5)]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="93" y="87" width="64" height="20" uuid="478790c0-39d9-486a-9aec-ebfaa4f9c9a5"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Tanggal}.toString()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="107" width="40" height="20" uuid="94ed6c42-bcd7-4263-be5f-f11c71cd79ce"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="7"/>
+				</textElement>
+				<text><![CDATA[CLASS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="107" width="117" height="20" uuid="39e60639-0410-4cab-a0f9-2ed8d465ce1c"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Regular 2D]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="127" width="40" height="20" uuid="03d9545e-6671-44a4-82d3-ce3f364fcc3a"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="7"/>
+				</textElement>
+				<text><![CDATA[SEAT]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="40" y="127" width="53" height="20" uuid="24fccb86-2f2a-443a-a794-51291fd19343"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Kursi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="93" y="127" width="64" height="58" uuid="8c4b9dc8-aecc-4b52-a9de-cf32c5ccc992"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New" size="40"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Studio}.charAt(7)]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="155" width="40" height="20" uuid="88645572-3cf7-43c3-ba35-486464cc228d"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="7"/>
+				</textElement>
+				<text><![CDATA[PRICE]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="40" y="155" width="53" height="20" uuid="91e4a69a-5023-43a9-a9c8-5c5f207ced7b"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Harga}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="185" width="157" height="20" uuid="a37dc5d7-b1c7-4e6a-bfa4-98c2f5f186bc"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ID_Struk}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="175" width="40" height="10" uuid="f898996c-a0ea-461a-be74-6613efb5a8d1"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="7"/>
+				</textElement>
+				<text><![CDATA[INVOICE]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="1" y="205" width="82" height="20" uuid="75d75e7b-1675-443d-b227-33dcd8079a58"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Tanggal_Beli}.toString()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="83" y="205" width="74" height="20" uuid="104d8548-8d44-4d31-a601-90ff728c9a6e"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Jam_Beli}.toString().substring(0,5)]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="158" y="65" width="85" height="11" uuid="defb52a4-f569-4986-a4d3-819ad03cce24"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Judul_Film}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="158" y="75" width="85" height="11" uuid="9f50e4a5-d308-4b57-8df0-90c465262074"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Jam}.toString().substring(0,5)]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="158" y="86" width="85" height="11" uuid="08f78ae8-3611-4595-a341-61566696f8b9"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Tanggal}.toString()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="158" y="107" width="85" height="11" uuid="dca8ce0e-d0af-4a89-9c3e-85583436025d"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="7"/>
+				</textElement>
+				<text><![CDATA[CLASS: Regular 2D]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="157" y="118" width="22" height="11" uuid="abf4cb53-eca1-40ff-b7cf-033e63dd309b"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="7"/>
+				</textElement>
+				<text><![CDATA[SEAT:]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Transparent" x="179" y="118" width="64" height="11" uuid="97607579-ba33-47c7-8568-d823bacabe88"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Kursi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="184" y="129" width="59" height="11" uuid="7239c93f-26d2-45eb-85f0-ab43f1d96411"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Harga}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="157" y="129" width="27" height="11" uuid="0bf81e3c-88c5-49da-ba5a-ba371ed3b41a"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="7"/>
+				</textElement>
+				<text><![CDATA[PRICE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="158" y="140" width="85" height="11" uuid="07bae2c7-ef57-4471-8884-04cb4841ffb3"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="7"/>
+				</textElement>
+				<text><![CDATA[INVOICE]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Transparent" x="158" y="151" width="85" height="11" uuid="2cd030bf-05e1-48ec-b891-82d3f4ef8fab"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ID_Struk}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="158" y="162" width="85" height="11" uuid="41ee0ab4-fb75-4f28-be22-490243a43b4d"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Tanggal_Beli}.toString()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="158" y="173" width="85" height="11" uuid="060fe7ec-d2ce-4c4a-ae85-4ae17984df20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Jam_Beli}.toString().substring(0,5)]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="158" height="32" uuid="a7310228-2eac-419a-9667-0ed4f8fb0822"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Candara" size="18"/>
+				</textElement>
+				<text><![CDATA[CINEMAX]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="32" width="158" height="18" uuid="deb21bd6-e4cd-40ca-84f0-33d9757bb656"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New" size="13"/>
+				</textElement>
+				<text><![CDATA[Bandung Ist*na Plaza]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="55" width="158" height="1" uuid="3136409f-37ff-46dd-97fc-ace12607d981"/>
+				<graphicElement>
+					<pen lineWidth="1.25" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="157" y="0" width="86" height="32" uuid="a9164e6a-e50e-48f4-941d-016327403b76"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Candara" size="18"/>
+				</textElement>
+				<text><![CDATA[CINEMAX]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="158" y="32" width="85" height="18" uuid="36150c7e-28f6-4030-a550-bbbd996580fb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New" size="13"/>
+				</textElement>
+				<text><![CDATA[Bandung]]></text>
+			</staticText>
+			<line>
+				<reportElement x="158" y="55" width="85" height="1" uuid="5f9520d7-f272-4718-90b4-659c4e582803"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="157" y="0" width="1" height="243" uuid="8528f962-9796-4685-8ffc-1879b5a29e2b"/>
+				<graphicElement>
+					<pen lineWidth="0.25" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+</jasperReport>

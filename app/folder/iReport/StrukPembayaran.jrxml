@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="141" pageHeight="283" columnWidth="101" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="51b42ba6-a23f-449b-98ac-5e4ae71a6240">
+	<property name="ireport.zoom" value="5.0"/>
+	<property name="ireport.x" value="9"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     strukpembayaran.`ID_Struk` AS strukpembayaran_ID_Struk,
+     strukpembayaran.`Tanggal_Beli` AS strukpembayaran_Tanggal_Beli,
+     strukpembayaran.`Jam_Beli` AS strukpembayaran_Jam_Beli,
+     strukpembayaran.`Jumlah_Item` AS strukpembayaran_Jumlah_Item,
+     strukpembayaran.`Total` AS strukpembayaran_Total,
+     strukpembayaran.`Diskon` AS strukpembayaran_Diskon,
+     strukpembayaran.`Total_Bayar` AS strukpembayaran_Total_Bayar,
+     strukpembayaran.`Payment` AS strukpembayaran_Payment,
+     strukpembayaran.`Change` AS strukpembayaran_Change,
+     strukpembayaran.`Nama_Kasir` AS strukpembayaran_Nama_Kasir,
+     relasi_pesantiket.`ID_Tiket` AS relasi_pesantiket_ID_Tiket,
+     relasi_pesantiket.`Judul_Film` AS relasi_pesantiket_Judul_Film,
+     relasi_pesantiket.`Tanggal` AS relasi_pesantiket_Tanggal,
+     relasi_pesantiket.`Jam` AS relasi_pesantiket_Jam,
+     relasi_pesantiket.`Harga` AS relasi_pesantiket_Harga,
+     relasi_pesantiket.`Studio` AS relasi_pesantiket_Studio
+FROM
+     `strukpembayaran` strukpembayaran INNER JOIN `relasi_pesantiket` relasi_pesantiket ON strukpembayaran.`ID_Struk` = relasi_pesantiket.`ID_Struk`]]>
+	</queryString>
+	<field name="strukpembayaran_ID_Struk" class="java.lang.String"/>
+	<field name="strukpembayaran_Tanggal_Beli" class="java.sql.Date"/>
+	<field name="strukpembayaran_Jam_Beli" class="java.sql.Time"/>
+	<field name="strukpembayaran_Jumlah_Item" class="java.lang.Integer"/>
+	<field name="strukpembayaran_Total" class="java.math.BigDecimal"/>
+	<field name="strukpembayaran_Diskon" class="java.math.BigDecimal"/>
+	<field name="strukpembayaran_Total_Bayar" class="java.math.BigDecimal"/>
+	<field name="strukpembayaran_Payment" class="java.math.BigDecimal"/>
+	<field name="strukpembayaran_Change" class="java.math.BigDecimal"/>
+	<field name="strukpembayaran_Nama_Kasir" class="java.lang.String"/>
+	<field name="relasi_pesantiket_ID_Tiket" class="java.lang.String"/>
+	<field name="relasi_pesantiket_Judul_Film" class="java.lang.String"/>
+	<field name="relasi_pesantiket_Tanggal" class="java.sql.Date"/>
+	<field name="relasi_pesantiket_Jam" class="java.sql.Time"/>
+	<field name="relasi_pesantiket_Harga" class="java.math.BigDecimal"/>
+	<field name="relasi_pesantiket_Studio" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="24" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="101" height="8" uuid="10d8d6ea-d4f2-4c79-b8d5-cf5b32264bcd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New" size="6"/>
+				</textElement>
+				<text><![CDATA[CINEMAXX BANDUNG INDAH PL*ZA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="8" width="101" height="8" uuid="5baeeacd-6860-4e7e-abee-6ed4092dc58f"/>
+				<textElement textAlignment="Center">
+					<font fontName="Courier New" size="6"/>
+				</textElement>
+				<text><![CDATA[Jl. Merd*ka No.56]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="16" width="101" height="8" uuid="0ab0b224-2703-441d-8717-a124c7a2378b"/>
+				<textElement textAlignment="Center">
+					<font fontName="Courier New" size="6"/>
+				</textElement>
+				<text><![CDATA[Bandung]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="11" splitType="Stretch">
+			<line>
+				<reportElement x="-16" y="1" width="131" height="1" uuid="30ab5ad3-c782-4ebe-b54b-7fa12215f5bb"/>
+				<graphicElement>
+					<pen lineStyle="Double"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="-1" y="2" width="44" height="8" uuid="8b3da283-af63-4684-be27-fe9e584d6716"/>
+				<textElement>
+					<font fontName="Courier New" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{strukpembayaran_ID_Struk}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="74" y="2" width="41" height="8" uuid="f913f46a-8c81-4a32-97bd-446b49c0f80f"/>
+				<textElement>
+					<font fontName="Courier New" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{strukpembayaran_Nama_Kasir}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="-16" y="10" width="131" height="1" uuid="54aa90ac-e4be-4844-95b1-1d1499b36076"/>
+				<graphicElement>
+					<pen lineStyle="Double"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="-16" y="2" width="11" height="8" uuid="6e2265b2-5af9-4641-ab71-c90fce663610"/>
+				<textElement textAlignment="Center">
+					<font fontName="Courier New" size="6"/>
+				</textElement>
+				<text><![CDATA[NO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="2" width="19" height="8" uuid="52324efd-e4d1-474c-b18c-d02810f17f43"/>
+				<textElement textAlignment="Center">
+					<font fontName="Courier New" size="6"/>
+				</textElement>
+				<text><![CDATA[KASIR]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="83" splitType="Stretch">
+			<textField>
+				<reportElement x="-16" y="5" width="66" height="8" uuid="580b438d-80d5-4ca3-89eb-60f73c35ee0a"/>
+				<textElement>
+					<font fontName="Courier New" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{relasi_pesantiket_Judul_Film}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="50" y="5" width="11" height="8" uuid="a6458807-4bec-405b-b328-e2742b5cc1f1"/>
+				<textElement>
+					<font fontName="Courier New" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{strukpembayaran_Jumlah_Item}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="61" y="5" width="23" height="8" uuid="0fdc3d2f-0271-409f-bd53-cb82aeebdb3a"/>
+				<textElement>
+					<font fontName="Courier New" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{relasi_pesantiket_Harga}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="84" y="5" width="31" height="8" uuid="c2fa25c0-7332-4219-88eb-a88a8d75f47c"/>
+				<textElement textAlignment="Right">
+					<font fontName="Courier New" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{strukpembayaran_Total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="-16" y="13" width="30" height="8" uuid="5ccfe4ec-bb40-4fba-ab6b-d22c7953dea9"/>
+				<textElement>
+					<font fontName="Courier New" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{relasi_pesantiket_Studio}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="-16" y="25" width="131" height="1" uuid="79f0678d-2bcf-44af-b113-8cea8c7d2dab"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="-16" y="27" width="66" height="8" uuid="18cc42ba-0f2e-42db-ae11-170ba4d6dcf9"/>
+				<textElement textAlignment="Left">
+					<font fontName="Courier New" size="6"/>
+				</textElement>
+				<text><![CDATA[TOTAL ITEM]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="50" y="27" width="11" height="8" uuid="c8001167-1f0c-4dbd-8552-33640bbeacc7"/>
+				<textElement>
+					<font fontName="Courier New" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{strukpembayaran_Jumlah_Item}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="84" y="27" width="31" height="8" uuid="0785f343-1f0c-4e8a-a7a7-47df1669d609"/>
+				<textElement textAlignment="Right">
+					<font fontName="Courier New" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{strukpembayaran_Total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="61" y="27" width="23" height="8" uuid="7795b691-70ef-4ab9-bbbc-fce4325ba3c4"/>
+				<textElement>
+					<font fontName="Courier New" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{relasi_pesantiket_Harga}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="-16" y="35" width="66" height="8" uuid="030fe8a9-0c48-45b7-aa11-05ce17dd61c5"/>
+				<textElement textAlignment="Left">
+					<font fontName="Courier New" size="6"/>
+				</textElement>
+				<text><![CDATA[TOTAL DISKON]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="61" y="35" width="13" height="8" uuid="e751d2c8-4b96-497e-b8d6-39848ffda780"/>
+				<textElement>
+					<font fontName="Courier New" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{strukpembayaran_Diskon}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="74" y="35" width="10" height="8" uuid="5fa5ceb0-da24-4e60-a4e5-698bc2e1f7f6"/>
+				<textElement textAlignment="Left">
+					<font fontName="Courier New" size="6"/>
+				</textElement>
+				<text><![CDATA[%]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="84" y="35" width="31" height="8" uuid="539e1d2d-822e-42dc-b838-40afa421fac9"/>
+				<textElement textAlignment="Right">
+					<font fontName="Courier New" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{strukpembayaran_Diskon}*$F{strukpembayaran_Total})/100]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="18" y="44" width="56" height="8" uuid="411c72c5-a527-4dd4-b129-b2c2356119f8"/>
+				<textElement textAlignment="Right">
+					<font fontName="Courier New" size="6"/>
+				</textElement>
+				<text><![CDATA[TOTAL BAYAR]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-16" y="43" width="131" height="1" uuid="3ee1a68f-01d5-4248-8c3b-0920552608b7"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="84" y="44" width="31" height="8" uuid="3a12efd7-cd41-4c9e-9b27-008beb12d71f"/>
+				<textElement textAlignment="Right">
+					<font fontName="Courier New" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{strukpembayaran_Total_Bayar}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="18" y="52" width="56" height="8" uuid="7d67bc40-4d67-49d1-997d-f5dd2efb93a6"/>
+				<textElement textAlignment="Right">
+					<font fontName="Courier New" size="6"/>
+				</textElement>
+				<text><![CDATA[TUNAI]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="84" y="52" width="31" height="8" uuid="4f477bed-e7ee-4ddf-8a20-8223b476809c"/>
+				<textElement textAlignment="Right">
+					<font fontName="Courier New" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{strukpembayaran_Payment}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="18" y="60" width="56" height="8" uuid="c1c76dbc-c447-4be9-9f09-3955d5ab1243"/>
+				<textElement textAlignment="Right">
+					<font fontName="Courier New" size="6" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[KEMBALIAN]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="84" y="60" width="31" height="8" uuid="534eae33-d0c5-46b2-b296-ea11e814e8c0"/>
+				<textElement textAlignment="Right">
+					<font fontName="Courier New" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{strukpembayaran_Change}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="-16" y="72" width="131" height="1" uuid="2c83aa50-904e-4a75-aaeb-f96ce5688de6"/>
+				<graphicElement>
+					<pen lineStyle="Double"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="-16" y="73" width="11" height="8" uuid="c0e433fd-19a2-44bd-9908-423daf53fa12"/>
+				<textElement textAlignment="Center">
+					<font fontName="Courier New" size="6"/>
+				</textElement>
+				<text><![CDATA[TGL]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="-1" y="73" width="44" height="8" uuid="38eab72c-ccae-40c0-bb81-18a1beb3203a"/>
+				<textElement>
+					<font fontName="Courier New" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{strukpembayaran_Tanggal_Beli}.toString()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="43" y="73" width="26" height="8" uuid="7e079019-3a96-41e7-8775-81f4af57361c"/>
+				<textElement>
+					<font fontName="Courier New" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{strukpembayaran_Jam_Beli}.toString().substring( 0,5 )]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="74" y="73" width="41" height="8" uuid="cc656536-29fb-4bd0-b2f1-7c463d85dea5"/>
+				<textElement>
+					<font fontName="Courier New" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{relasi_pesantiket_ID_Tiket}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="-16" y="81" width="131" height="1" uuid="b42b18c9-94e3-42f8-8129-1e0ff1122c66"/>
+				<graphicElement>
+					<pen lineStyle="Double"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="18" y="13" width="30" height="8" uuid="0b925631-f113-404b-83b0-6a6daabd7f01"/>
+				<textElement>
+					<font fontName="Courier New" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{relasi_pesantiket_Tanggal}.toString()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="50" y="13" width="30" height="8" uuid="57679237-6a9b-4b57-b260-425ccaa863d4"/>
+				<textElement>
+					<font fontName="Courier New" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{relasi_pesantiket_Jam}.toString().substring( 0,5 )]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="28" splitType="Stretch">
+			<staticText>
+				<reportElement x="-16" y="3" width="131" height="8" uuid="7415701e-5bf8-47f3-b3b8-131da31caf90"/>
+				<textElement textAlignment="Center">
+					<font fontName="Courier New" size="6"/>
+				</textElement>
+				<text><![CDATA[** TERIMA KASIH**]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-16" y="11" width="131" height="8" uuid="918c0db5-46e8-4ece-83f9-0f7e3fb99c0f"/>
+				<textElement textAlignment="Center">
+					<font fontName="Courier New" size="6"/>
+				</textElement>
+				<text><![CDATA[SELAMAT MENONTON]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-16" y="19" width="131" height="8" uuid="fa6d52cd-2253-4742-8f10-837bcd315120"/>
+				<textElement textAlignment="Center">
+					<font fontName="Courier New" size="6"/>
+				</textElement>
+				<text><![CDATA[NIKMATI DENGAN POP CORN HANGAT]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<line>
+				<reportElement x="-16" y="9" width="34" height="1" uuid="542ae0b0-ea17-4688-9de2-d0a1c35fa2ed"/>
+				<graphicElement>
+					<pen lineStyle="Double"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="18" y="6" width="66" height="8" uuid="ef261405-ed64-42f5-b077-482fd877913e"/>
+				<textElement textAlignment="Center">
+					<font fontName="Courier New" size="6"/>
+				</textElement>
+				<text><![CDATA[LAYANAN KONSUMEN]]></text>
+			</staticText>
+			<line>
+				<reportElement x="84" y="10" width="31" height="1" uuid="b86c7739-c7df-4e62-935d-27996b9b8c70"/>
+				<graphicElement>
+					<pen lineStyle="Double"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="-16" y="14" width="66" height="8" uuid="a8f898d2-d029-4a6d-ba0f-9e31de546a3b"/>
+				<textElement textAlignment="Center">
+					<font fontName="Courier New" size="6"/>
+				</textElement>
+				<text><![CDATA[CALL (022) 424**19]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="14" width="66" height="8" uuid="a0b2ecdd-9f90-4157-b00f-adb89a3c923f"/>
+				<textElement textAlignment="Center">
+					<font fontName="Courier New" size="6"/>
+				</textElement>
+				<text><![CDATA[SMS 0813 2289 ****]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-16" y="22" width="131" height="8" uuid="f77b5e75-a84e-4958-a79b-dc6b1072b1f8"/>
+				<textElement textAlignment="Center">
+					<font fontName="Courier New" size="6"/>
+				</textElement>
+				<text><![CDATA[EMAIL : haniialfiyyaah@gmail.com]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-15" y="40" width="131" height="1" uuid="65b13816-4b1c-408d-988f-74477973d8cf"/>
+				<graphicElement>
+					<pen lineStyle="Double"/>
+				</graphicElement>
+			</line>
+		</band>
+	</pageFooter>
+</jasperReport>

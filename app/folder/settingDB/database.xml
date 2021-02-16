@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>Database Bioskop - SBD 13</comment>
+<entry key="HOST">localhost</entry>
+<entry key="PAS"/>
+<entry key="DATABASE">dbbioskop</entry>
+<entry key="PORT">3306</entry>
+<entry key="USER">root</entry>
+</properties>
